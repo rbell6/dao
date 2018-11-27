@@ -1,0 +1,110 @@
+GLfloat vertices[] = {
+0, 0, 0,
+0, 3, 0,
+8, 3, 0,
+8, 0, 0
+};
+GLushort indices[] = {
+0, 1, 2,
+2, 3, 0
+};
+GLfloat colorsA[] = {
+1, 0, 1, 1,
+0, 1, 0, 1,
+0, 0, 1, 1,
+1, 0, 1, 1
+};
+GLfloat colorsB[] = {
+0.2f, 0.8f, 0.8f, 1.0f,
+0.2f, 0.3f, 0.8f, 1.0f,
+0.8f, 0.3f, 0.8f, 1.0f,
+0.2f, 0.3f, 0.8f, 1.0f
+};
+
+VertexArray sprite1, sprite2;
+IndexBuffer ibo(indices, 6);
+
+sprite1.addBuffer(new Buffer(vertices, 4 * 3, 3), 0);
+sprite1.addBuffer(new Buffer(colorsA, 4 * 4, 4), 1);
+sprite2.addBuffer(new Buffer(vertices, 4 * 3, 3), 0);
+sprite2.addBuffer(new Buffer(colorsB, 4 * 4, 4), 1);
+
+/Users/rbell/Documents/xcode-projects/dao/dao/
+
+sprite1.bind();
+ibo.bind();
+shader.setUniform("ml_matrix", Matrix4::translation(Vector3(4, 3, 0)));
+glDrawElements(GL_TRIANGLES, ibo.getCount(), GL_UNSIGNED_SHORT, 0);
+ibo.bind();
+sprite1.unbind();
+
+sprite2.bind();
+ibo.bind();
+shader.setUniform("ml_matrix", Matrix4::translation(Vector3(0, 0, 0)));
+glDrawElements(GL_TRIANGLES, ibo.getCount(), GL_UNSIGNED_SHORT, 0);
+ibo.bind();
+sprite2.unbind();
+
+
+--main
+
+vector<Renderable2D*> sprites;
+srand(time(NULL));
+#if BATCH_RENDERER
+BatchRenderer2D renderer;
+for (float y{0.0f}; y < 9.0f; y+=0.05f) {
+for (float x{0.0f}; x < 16.0f; x+=0.05f) {
+Vector4 color = Vector4(rand() % 1000 / 1000.f, 0, 1, 1);
+sprites.push_back(new Sprite(x, y, 0.04f, 0.04f, color));
+}
+}
+#else
+Simple2DRenderer renderer;
+for (float y{0.0f}; y < 9.0f; y+=0.1f) {
+for (float x{0.0f}; x < 16.0f; x+=0.1f) {
+Vector4 color = Vector4(rand() % 1000 / 1000.f, 0, 1, 1);
+sprites.push_back(new StaticSprite(x, y, 0.08f, 0.08f, color, shader));
+}
+}
+#endif
+shader.setUniform("light_pos", Vector2(4.0f, 1.5f));
+shader.setUniform("colour", Vector4(0.2f, 0.3f, 0.8f, 1.0f));
+Timer timer, time;
+long long t = 0;
+int fps{0}, frames{0};
+while (not window.closed()) {
+timer.reset();
+window.clear();
+double x, y;
+window.getMousePosition(x, y);
+//test render
+Matrix4 matrix = Matrix4::translation(Vector3(5, 5, 5));
+matrix = matrix * Matrix4::rotation(time.elapsed().count() / 50.0f, Vector3(0, 0, 1));
+matrix = matrix * Matrix4::translation(Vector3(-5, -5, -5));
+shader.setUniform("ml_matrix", matrix);
+shader.setUniform("light_pos", Vector2((float)(x * 16.0f / 960.0f), (float)(9.0f - y * 9.0f / 540.0f)));
+#if BATCH_RENDERER
+renderer.begin();
+#endif
+for (auto sprite : sprites) {
+renderer.submit(sprite);
+}
+#if BATCH_RENDERER
+renderer.end();
+#endif
+renderer.flush();
+//end test render
+window.update();
+frames++;
+if (time.elapsed().count() - t > 1000) {
+t += 1000;
+fps = frames;
+frames = 0;
+printf("%d fps\n", fps);
+}
+//printf("elapsed time: %d\n", timer.elapsed().count());
+}
+for (auto sprite : sprites) {
+delete sprite;
+}
+
