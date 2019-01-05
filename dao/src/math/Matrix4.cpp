@@ -43,9 +43,32 @@ namespace dao {
 			return *this;
 		}
 		
-		Matrix4 operator *(Matrix4 left, const Matrix4& right) {
+		Matrix4 operator *(Matrix4 left, const Matrix4& right) { // take const ref?
 			return left.multiply(right);
 		}
+		
+		Vector3 Matrix4::multiply(const Vector3& other) const {
+			return Vector3(
+				columns[0].x * other.x + columns[1].x * other.y + columns[2].x * other.z + columns[3].x,
+				columns[0].y * other.x + columns[1].y * other.y + columns[2].y * other.z + columns[3].y,
+				columns[0].z * other.x + columns[1].z * other.y + columns[2].z * other.z + columns[3].z
+			);
+		}
+		Vector4 Matrix4::multiply(const Vector4& other) const {
+			return Vector4(
+				columns[0].x * other.x + columns[1].x * other.y + columns[2].x * other.z + columns[3].x * other.w,
+				columns[0].y * other.x + columns[1].y * other.y + columns[2].y * other.z + columns[3].y * other.w,
+				columns[0].z * other.x + columns[1].z * other.y + columns[2].z * other.z + columns[3].z * other.w,
+				columns[0].w * other.x + columns[1].w * other.y + columns[2].y * other.z + columns[3].w * other.w
+			);
+		}
+		Vector3 operator *(Matrix4 left, const Vector3& right) {
+			return left.multiply(right);
+		}
+		Vector4 operator *(Matrix4 left, const Vector4& right) {
+			return left.multiply(right);
+		}
+		
 		Matrix4& Matrix4::operator *=(const Matrix4& other) {
 			return multiply(other);
 		}

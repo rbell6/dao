@@ -30,7 +30,9 @@ namespace dao {
 			~Shader();
 			
 			GLint getUniformLocation(const GLchar* name);
+			void setUniform(const GLchar* name, float* value, int count);
 			void setUniform(const GLchar* name, const float value);
+			void setUniform(const GLchar* name, int* value, int count);
 			void setUniform(const GLchar* name, const int value);
 			void setUniform(const GLchar* name, const Vector2 &vector);
 			void setUniform(const GLchar* name, const Vector3 &vector);

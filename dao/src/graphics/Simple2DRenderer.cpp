@@ -7,9 +7,12 @@
 //
 
 #include "Simple2DRenderer.hpp"
+#include "Renderable2D.hpp"
 
 namespace dao {
 	namespace graphics {
+		Simple2DRenderer::~Simple2DRenderer() {}
+		
 		void Simple2DRenderer::submit(const Renderable2D* renderable) {
 			mRenderQueue.push_back((StaticSprite*)renderable);
 		}

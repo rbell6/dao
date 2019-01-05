@@ -10,9 +10,13 @@
 
 namespace dao {
 	namespace graphics {
-		Renderable2D::Renderable2D(Vector3 position, Vector2 size, Vector4 color)
-		: mPosition(position), mSize(size), mColor(color) {}
+		Renderable2D::Renderable2D() {
+			{ setUVDefaults(); }
+		}
 		
-//		Renderable2D::~Renderable2D() {}
+		Renderable2D::Renderable2D(Vector3 position, Vector2 size, Vector4 color)
+		: mPosition(position), mSize(size), mColor(color) {
+			setUVDefaults(); 
+		}
 	}
 }

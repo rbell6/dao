@@ -21,8 +21,15 @@ namespace dao {
 		GLint Shader::getUniformLocation(const GLchar* name) {
 			return glGetUniformLocation(mId, name);
 		}
+		
+		void Shader::setUniform(const GLchar* name, float* value, int count) {
+			glUniform1fv(getUniformLocation(name), count, value);
+		}
 		void Shader::setUniform(const GLchar* name, const float value) {
 			glUniform1f(getUniformLocation(name), value);
+		}
+		void Shader::setUniform(const GLchar* name, int* value, int count) {
+			glUniform1iv(getUniformLocation(name), count, value);
 		}
 		void Shader::setUniform(const GLchar* name, const int value) {
 			glUniform1i(getUniformLocation(name), value);

@@ -17,7 +17,7 @@ namespace dao {
 		class TileLayer : public Layer {
 		public:
 			TileLayer(Shader* shader);
-			~TileLayer();
+			virtual ~TileLayer();
 		};
 	}
 }

@@ -9,8 +9,11 @@
 #ifndef BatchRenderer2D_hpp
 #define BatchRenderer2D_hpp
 #include <cstddef>
+#include <vector>
 #include "Renderer2D.hpp"
+#include "Renderable2D.hpp"
 #include "buffers/IndexBuffer.hpp"
+using namespace std;
 
 namespace dao {
 	namespace graphics {
@@ -21,7 +24,9 @@ namespace dao {
 #define RENDERER_BUFFER_SIZE RENDERER_SPRITE_SIZE * RENDERER_MAX_SPRITES
 #define RENDERER_INDICES_SIZE RENDERER_MAX_SPRITES * 6
 #define SHADER_VERTEX_INDEX 0
-#define SHADER_COLOR_INDEX 1
+#define SHADER_UV_INDEX 1
+#define SHADER_TID_INDEX 2
+#define SHADER_COLOR_INDEX 3
 		
 		class BatchRenderer2D : public Renderer2D {
 			GLuint mVAO;
@@ -29,11 +34,12 @@ namespace dao {
 			IndexBuffer* mIBO;
 			GLsizei mIndexCount;
 			VertexData* mBuffer;
+			vector<GLuint> mTextureSlots;
 			
 			void init();
 		public:
 			BatchRenderer2D();
-			~BatchRenderer2D();
+			virtual ~BatchRenderer2D();
 			void begin() override;
 			void submit(const Renderable2D* renderable) override;
 			void end() override;

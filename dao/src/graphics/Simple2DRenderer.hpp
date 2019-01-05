@@ -19,6 +19,7 @@ namespace dao {
 		class Simple2DRenderer : public Renderer2D {
 			deque<const StaticSprite*> mRenderQueue;
 		public:
+			virtual ~Simple2DRenderer();
 			void submit(const Renderable2D* renderable) override;
 			void flush() override;
 		};

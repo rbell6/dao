@@ -18,11 +18,16 @@
 		141A72DA21ABEE7B00892594 /* StaticSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A72D821ABEE7B00892594 /* StaticSprite.cpp */; };
 		141A72FD21ADF42E00892594 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A72FB21ADF42E00892594 /* Layer.cpp */; };
 		141A730021ADF9D000892594 /* TileLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A72FE21ADF9D000892594 /* TileLayer.cpp */; };
+		141A730321AFA9E200892594 /* Group.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A730121AFA9E200892594 /* Group.cpp */; };
+		141A730521AFBCD700892594 /* libfreeimage.3.18.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 141A730421AFBCD700892594 /* libfreeimage.3.18.0.dylib */; };
+		141A730821AFD5F900892594 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A730621AFD5F900892594 /* Texture.cpp */; };
 		142944B82175721400F89709 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445506421743A580056F2EA /* OpenGL.framework */; };
 		142944B92175722D00F89709 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14898EDD21743C19000BA462 /* libGLEW.2.1.0.dylib */; };
 		142944BA2175723C00F89709 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14898EDF21743C3E000BA462 /* libglfw.3.2.dylib */; };
 		1445505D217439630056F2EA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1445505C217439630056F2EA /* main.cpp */; };
+		144BC4D221C2DB72002872BE /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 144BC4D021C2DB72002872BE /* Shape.cpp */; };
 		14898EE621743F4A000BA462 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14898EE421743F4A000BA462 /* window.cpp */; };
+		14A6AFBE21B4E2EC0081002E /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A6AFBD21B4E2EC0081002E /* libfreetype.6.dylib */; };
 		14AB3C8121A3CB0900A01C96 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C7F21A3CB0900A01C96 /* Vector2.cpp */; };
 		14AB3C8421A3E51700A01C96 /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C8221A3E51700A01C96 /* Vector3.cpp */; };
 		14AB3C8721A3E52600A01C96 /* Vector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C8521A3E52600A01C96 /* Vector4.cpp */; };
@@ -71,13 +76,24 @@
 		141A72FC21ADF42E00892594 /* Layer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Layer.hpp; sourceTree = "<group>"; };
 		141A72FE21ADF9D000892594 /* TileLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TileLayer.cpp; sourceTree = "<group>"; };
 		141A72FF21ADF9D000892594 /* TileLayer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TileLayer.hpp; sourceTree = "<group>"; };
+		141A730121AFA9E200892594 /* Group.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Group.cpp; sourceTree = "<group>"; };
+		141A730221AFA9E200892594 /* Group.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Group.hpp; sourceTree = "<group>"; };
+		141A730421AFBCD700892594 /* libfreeimage.3.18.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreeimage.3.18.0.dylib; path = ../../../../../usr/local/Cellar/freeimage/3.18.0/lib/libfreeimage.3.18.0.dylib; sourceTree = "<group>"; };
+		141A730621AFD5F900892594 /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		141A730721AFD5F900892594 /* Texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
+		141A730921AFD7E400892594 /* ImageUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
 		14455059217439630056F2EA /* dao */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dao; sourceTree = BUILT_PRODUCTS_DIR; };
 		1445505C217439630056F2EA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1445506421743A580056F2EA /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		144BC4D021C2DB72002872BE /* Shape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shape.cpp; sourceTree = "<group>"; };
+		144BC4D121C2DB72002872BE /* Shape.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shape.hpp; sourceTree = "<group>"; };
+		147039B421E0465700382426 /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		147039B521E046B700382426 /* Sprite50K.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sprite50K.h; sourceTree = "<group>"; };
 		14898EDD21743C19000BA462 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 		14898EDF21743C3E000BA462 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		14898EE421743F4A000BA462 /* window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
 		14898EE521743F4A000BA462 /* window.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = window.hpp; sourceTree = "<group>"; };
+		14A6AFBD21B4E2EC0081002E /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = ../../../../../usr/local/Cellar/freetype/2.9.1/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
 		14AB3C7F21A3CB0900A01C96 /* Vector2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2.cpp; sourceTree = "<group>"; };
 		14AB3C8021A3CB0900A01C96 /* Vector2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector2.hpp; sourceTree = "<group>"; };
 		14AB3C8221A3E51700A01C96 /* Vector3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector3.cpp; sourceTree = "<group>"; };
@@ -94,6 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A6AFBE21B4E2EC0081002E /* libfreetype.6.dylib in Frameworks */,
+				141A730521AFBCD700892594 /* libfreeimage.3.18.0.dylib in Frameworks */,
 				142944BA2175723C00F89709 /* libglfw.3.2.dylib in Frameworks */,
 				142944B92175722D00F89709 /* libGLEW.2.1.0.dylib in Frameworks */,
 				142944B82175721400F89709 /* OpenGL.framework in Frameworks */,
@@ -108,6 +126,7 @@
 			children = (
 				141A72B721A93AA500892594 /* FileUtils.h */,
 				141A72F921AD1C9200892594 /* Timer.h */,
+				141A730921AFD7E400892594 /* ImageUtils.h */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -141,6 +160,8 @@
 				141A72FC21ADF42E00892594 /* Layer.hpp */,
 				141A72FE21ADF9D000892594 /* TileLayer.cpp */,
 				141A72FF21ADF9D000892594 /* TileLayer.hpp */,
+				141A730121AFA9E200892594 /* Group.cpp */,
+				141A730221AFA9E200892594 /* Group.hpp */,
 			);
 			path = layers;
 			sourceTree = "<group>";
@@ -175,6 +196,8 @@
 		1445506321743A580056F2EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14A6AFBD21B4E2EC0081002E /* libfreetype.6.dylib */,
+				141A730421AFBCD700892594 /* libfreeimage.3.18.0.dylib */,
 				14898EDF21743C3E000BA462 /* libglfw.3.2.dylib */,
 				14898EDD21743C19000BA462 /* libGLEW.2.1.0.dylib */,
 				1445506421743A580056F2EA /* OpenGL.framework */,
@@ -182,9 +205,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		144BC4CF21C2DB4C002872BE /* shapes */ = {
+			isa = PBXGroup;
+			children = (
+				144BC4D021C2DB72002872BE /* Shape.cpp */,
+				144BC4D121C2DB72002872BE /* Shape.hpp */,
+			);
+			path = shapes;
+			sourceTree = "<group>";
+		};
+		147039B321E0460D00382426 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				147039B421E0465700382426 /* Application.h */,
+				147039B521E046B700382426 /* Sprite50K.h */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
 		14898EE121743F01000BA462 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				147039B321E0460D00382426 /* app */,
 				141A72BB21A945F000892594 /* shaders */,
 				141A72B321A93A3D00892594 /* utils */,
 				14AB3C8821A3E96D00A01C96 /* math */,
@@ -196,6 +238,7 @@
 		14898EE221743F0C000BA462 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				144BC4CF21C2DB4C002872BE /* shapes */,
 				141A72FA21ADF41900892594 /* layers */,
 				141A72BE21AA81CC00892594 /* buffers */,
 				14898EE521743F4A000BA462 /* window.hpp */,
@@ -213,6 +256,8 @@
 				141A72D621ABEE6D00892594 /* Sprite.hpp */,
 				141A72D821ABEE7B00892594 /* StaticSprite.cpp */,
 				141A72D921ABEE7B00892594 /* StaticSprite.hpp */,
+				141A730621AFD5F900892594 /* Texture.cpp */,
+				141A730721AFD5F900892594 /* Texture.hpp */,
 			);
 			path = graphics;
 			sourceTree = "<group>";
@@ -291,17 +336,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AB3C8721A3E52600A01C96 /* Vector4.cpp in Sources */,
+				141A730321AFA9E200892594 /* Group.cpp in Sources */,
 				1445505D217439630056F2EA /* main.cpp in Sources */,
 				14AB3C8121A3CB0900A01C96 /* Vector2.cpp in Sources */,
 				141A72C721AA8CC400892594 /* VertexArray.cpp in Sources */,
 				141A72DA21ABEE7B00892594 /* StaticSprite.cpp in Sources */,
 				14AB3C8C21A3EE2400A01C96 /* Matrix4.cpp in Sources */,
+				144BC4D221C2DB72002872BE /* Shape.cpp in Sources */,
 				141A72BA21A93E7B00892594 /* Shader.cpp in Sources */,
 				141A72FD21ADF42E00892594 /* Layer.cpp in Sources */,
 				141A72C121AA821300892594 /* Buffer.cpp in Sources */,
 				141A72D421ABDFB000892594 /* BatchRenderer2D.cpp in Sources */,
 				14AB3C8421A3E51700A01C96 /* Vector3.cpp in Sources */,
 				141A72D021AB795E00892594 /* Simple2DRenderer.cpp in Sources */,
+				141A730821AFD5F900892594 /* Texture.cpp in Sources */,
 				14898EE621743F4A000BA462 /* window.cpp in Sources */,
 				141A72CA21AB483100892594 /* Renderable2D.cpp in Sources */,
 				141A72D721ABEE6D00892594 /* Sprite.cpp in Sources */,
@@ -430,11 +478,18 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/glfw/3.2.1/include,
+					/usr/local/Cellar/glew/2.1.0/include,
+					/usr/local/Cellar/freeimage/3.18.0/include,
+					/usr/local/Cellar/freetype/2.9.1/include,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glew/2.1.0/lib,
 					/usr/local/Cellar/glfw/3.2.1/lib,
+					/usr/local/Cellar/freeimage/3.18.0/lib,
+					/usr/local/Cellar/freetype/2.9.1/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -445,11 +500,18 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/glfw/3.2.1/include,
+					/usr/local/Cellar/glew/2.1.0/include,
+					/usr/local/Cellar/freeimage/3.18.0/include,
+					/usr/local/Cellar/freetype/2.9.1/include,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glew/2.1.0/lib,
 					/usr/local/Cellar/glfw/3.2.1/lib,
+					/usr/local/Cellar/freeimage/3.18.0/lib,
+					/usr/local/Cellar/freetype/2.9.1/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

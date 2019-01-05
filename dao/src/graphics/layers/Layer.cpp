@@ -7,6 +7,7 @@
 //
 
 #include "Layer.hpp"
+#include <stdio.h>
 
 namespace dao {
 	namespace graphics {
@@ -20,7 +21,6 @@ namespace dao {
 		
 		Layer::~Layer() {
 			delete mRenderer;
-			//delete mShader; //todo:figure out this bug
 			for (auto r : mRenderables) {
 				delete r;
 			}
@@ -34,7 +34,7 @@ namespace dao {
 			mShader->enable();
 			mRenderer->begin();
 			for (const auto renderable : mRenderables) {
-				mRenderer->submit(renderable);
+				renderable->submit(mRenderer);
 			}
 			mRenderer->end();
 			mRenderer->flush();
