@@ -11,12 +11,19 @@
 namespace dao {
 	namespace graphics {
 		Renderable2D::Renderable2D() {
-			{ setUVDefaults(); }
+			setUVDefaults();
 		}
 		
-		Renderable2D::Renderable2D(Vector3 position, Vector2 size, Vector4 color)
+		Renderable2D::Renderable2D(glm::vec3 position, glm::vec2 size, glm::vec4 color)
 		: mPosition(position), mSize(size), mColor(color) {
 			setUVDefaults(); 
 		}
+        
+        void Renderable2D::setUVDefaults() {
+            mUV.push_back(glm::vec2(0, 0));
+            mUV.push_back(glm::vec2(0, 1));
+            mUV.push_back(glm::vec2(1, 1));
+            mUV.push_back(glm::vec2(1, 0));
+        }
 	}
 }

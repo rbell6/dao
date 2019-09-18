@@ -7,12 +7,11 @@
 //
 
 #include "Layer.hpp"
-#include <stdio.h>
 
 namespace dao {
 	namespace graphics {
 		
-		Layer::Layer(Renderer2D* renderer, Shader* shader, Matrix4 projectionMatrix)
+        Layer::Layer(Renderer2D* renderer, Shader* shader, glm::mat4 projectionMatrix)
 		: mRenderer(renderer), mShader(shader), mProjectionMatrix(projectionMatrix) {
 			mShader->enable();
 			mShader->setUniform("pr_matrix", mProjectionMatrix);

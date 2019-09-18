@@ -8,9 +8,10 @@
 
 #ifndef TileLayer_hpp
 #define TileLayer_hpp
-
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include "Layer.hpp"
-#include "../BatchRenderer2D.hpp"
+#include "graphics/BatchRenderer2D.hpp"
 
 namespace dao {
 	namespace graphics {

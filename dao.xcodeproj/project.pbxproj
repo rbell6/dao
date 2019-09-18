@@ -26,10 +26,6 @@
 		1445505D217439630056F2EA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1445505C217439630056F2EA /* main.cpp */; };
 		144BC4D221C2DB72002872BE /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 144BC4D021C2DB72002872BE /* Shape.cpp */; };
 		14898EE621743F4A000BA462 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14898EE421743F4A000BA462 /* window.cpp */; };
-		14AB3C8121A3CB0900A01C96 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C7F21A3CB0900A01C96 /* Vector2.cpp */; };
-		14AB3C8421A3E51700A01C96 /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C8221A3E51700A01C96 /* Vector3.cpp */; };
-		14AB3C8721A3E52600A01C96 /* Vector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C8521A3E52600A01C96 /* Vector4.cpp */; };
-		14AB3C8C21A3EE2400A01C96 /* Matrix4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C8A21A3EE2400A01C96 /* Matrix4.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		140B1019233192C800291ACB /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../usr/local/Cellar/glfw/3.3/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
-		141A72B221A9370B00892594 /* MathFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathFunctions.h; sourceTree = "<group>"; };
 		141A72B721A93AA500892594 /* FileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 		141A72B821A93E7B00892594 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		141A72B921A93E7B00892594 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
@@ -93,15 +88,6 @@
 		14898EE421743F4A000BA462 /* window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
 		14898EE521743F4A000BA462 /* window.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = window.hpp; sourceTree = "<group>"; };
 		14A6AFBD21B4E2EC0081002E /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = ../../../../../usr/local/Cellar/freetype/2.9.1/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
-		14AB3C7F21A3CB0900A01C96 /* Vector2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2.cpp; sourceTree = "<group>"; };
-		14AB3C8021A3CB0900A01C96 /* Vector2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector2.hpp; sourceTree = "<group>"; };
-		14AB3C8221A3E51700A01C96 /* Vector3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector3.cpp; sourceTree = "<group>"; };
-		14AB3C8321A3E51700A01C96 /* Vector3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector3.hpp; sourceTree = "<group>"; };
-		14AB3C8521A3E52600A01C96 /* Vector4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector4.cpp; sourceTree = "<group>"; };
-		14AB3C8621A3E52600A01C96 /* Vector4.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector4.hpp; sourceTree = "<group>"; };
-		14AB3C8921A3EAB800A01C96 /* Math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Math.h; sourceTree = "<group>"; };
-		14AB3C8A21A3EE2400A01C96 /* Matrix4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix4.cpp; sourceTree = "<group>"; };
-		14AB3C8B21A3EE2400A01C96 /* Matrix4.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix4.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,7 +220,6 @@
 				147039B321E0460D00382426 /* app */,
 				140B101B2331B86100291ACB /* gameplay */,
 				14898EE221743F0C000BA462 /* graphics */,
-				14AB3C8821A3E96D00A01C96 /* math */,
 				141A72BB21A945F000892594 /* shaders */,
 				141A72B321A93A3D00892594 /* utils */,
 			);
@@ -266,23 +251,6 @@
 				141A730721AFD5F900892594 /* Texture.hpp */,
 			);
 			path = graphics;
-			sourceTree = "<group>";
-		};
-		14AB3C8821A3E96D00A01C96 /* math */ = {
-			isa = PBXGroup;
-			children = (
-				14AB3C7F21A3CB0900A01C96 /* Vector2.cpp */,
-				14AB3C8021A3CB0900A01C96 /* Vector2.hpp */,
-				14AB3C8221A3E51700A01C96 /* Vector3.cpp */,
-				14AB3C8321A3E51700A01C96 /* Vector3.hpp */,
-				14AB3C8521A3E52600A01C96 /* Vector4.cpp */,
-				14AB3C8621A3E52600A01C96 /* Vector4.hpp */,
-				14AB3C8921A3EAB800A01C96 /* Math.h */,
-				14AB3C8A21A3EE2400A01C96 /* Matrix4.cpp */,
-				14AB3C8B21A3EE2400A01C96 /* Matrix4.hpp */,
-				141A72B221A9370B00892594 /* MathFunctions.h */,
-			);
-			path = math;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,19 +309,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AB3C8721A3E52600A01C96 /* Vector4.cpp in Sources */,
 				141A730321AFA9E200892594 /* Group.cpp in Sources */,
 				1445505D217439630056F2EA /* main.cpp in Sources */,
-				14AB3C8121A3CB0900A01C96 /* Vector2.cpp in Sources */,
 				141A72C721AA8CC400892594 /* VertexArray.cpp in Sources */,
 				141A72DA21ABEE7B00892594 /* StaticSprite.cpp in Sources */,
-				14AB3C8C21A3EE2400A01C96 /* Matrix4.cpp in Sources */,
 				144BC4D221C2DB72002872BE /* Shape.cpp in Sources */,
 				141A72BA21A93E7B00892594 /* Shader.cpp in Sources */,
 				141A72FD21ADF42E00892594 /* Layer.cpp in Sources */,
 				141A72C121AA821300892594 /* Buffer.cpp in Sources */,
 				141A72D421ABDFB000892594 /* BatchRenderer2D.cpp in Sources */,
-				14AB3C8421A3E51700A01C96 /* Vector3.cpp in Sources */,
 				141A72D021AB795E00892594 /* Simple2DRenderer.cpp in Sources */,
 				141A730821AFD5F900892594 /* Texture.cpp in Sources */,
 				14898EE621743F4A000BA462 /* window.cpp in Sources */,
@@ -484,6 +448,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/glfw/3.3/include,
 					/usr/local/Cellar/glew/2.1.0/include,
@@ -509,6 +474,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/glfw/3.3/include,
 					/usr/local/Cellar/glew/2.1.0/include,

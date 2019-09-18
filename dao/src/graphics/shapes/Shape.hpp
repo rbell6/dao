@@ -8,13 +8,12 @@
 
 #ifndef Shape_hpp
 #define Shape_hpp
-#include "../../math/Vector2.hpp"
+#include <glm/glm.hpp>
 
 namespace dao {
-	using namespace math;
 	namespace graphics {
 		class Shape {
-			Vector2 position;
+            glm::vec2 position;
 			int width, height;
 		};
 	}

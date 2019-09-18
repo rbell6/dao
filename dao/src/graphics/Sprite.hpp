@@ -8,6 +8,7 @@
 
 #ifndef Sprite_hpp
 #define Sprite_hpp
+#include <glm/glm.hpp>
 #include "Renderable2D.hpp"
 #include "Texture.hpp"
 
@@ -15,7 +16,7 @@ namespace dao {
 	namespace graphics {
 		class Sprite : public Renderable2D {
 		public:
-			Sprite(float x, float y, float width, float height, Vector4& color);
+			Sprite(float x, float y, float width, float height, glm::vec4 color);
 			Sprite(float x, float y, float width, float height, Texture* texture);
 		};
 	}

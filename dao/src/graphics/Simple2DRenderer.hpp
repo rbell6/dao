@@ -9,6 +9,8 @@
 #ifndef Simple2DRenderer_hpp
 #define Simple2DRenderer_hpp
 #include <deque>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include "Renderer2D.hpp"
 #include "StaticSprite.hpp"
 

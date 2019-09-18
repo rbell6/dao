@@ -11,7 +11,7 @@
 namespace dao {
 	namespace graphics {
 		
-		Group::Group(const Matrix4& transform): mTransform(transform) {}
+        Group::Group(const glm::mat4& transform): mTransform(transform) {}
 		Group::~Group() {
 			for (auto child : mChildren) {
 				delete child;

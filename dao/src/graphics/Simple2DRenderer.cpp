@@ -21,8 +21,8 @@ namespace dao {
 				const StaticSprite* sprite = mRenderQueue.front();
 				sprite->getVAO()->bind();
 				sprite->getIBO()->bind();
-				
-				sprite->getShader().setUniform("ml_matrix", Matrix4::translation(sprite->getPosition()));
+                
+				sprite->getShader().setUniform("ml_matrix", glm::translate(glm::mat4(), sprite->getPosition()));
 				glDrawElements(GL_TRIANGLES, sprite->getIBO()->getCount(), GL_UNSIGNED_INT, 0);
 				
 				sprite->getIBO()->unbind();

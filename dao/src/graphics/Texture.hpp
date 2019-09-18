@@ -12,7 +12,7 @@
 #include <OpenGL/gl3ext.h>
 #include <string>
 #include <FreeImage.h>
-#include "../utils/ImageUtils.h"
+#include "utils/ImageUtils.h"
 
 using namespace std;
 

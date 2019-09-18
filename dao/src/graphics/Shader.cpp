@@ -34,17 +34,17 @@ namespace dao {
 		void Shader::setUniform(const GLchar* name, const int value) {
 			glUniform1i(getUniformLocation(name), value);
 		}
-		void Shader::setUniform(const GLchar* name, const Vector2 &vector) {
+        void Shader::setUniform(const GLchar* name, glm::vec2 vector) {
 			glUniform2f(getUniformLocation(name), vector.x, vector.y);
 		}
-		void Shader::setUniform(const GLchar* name, const Vector3 &vector) {
+        void Shader::setUniform(const GLchar* name, glm::vec3 vector) {
 			glUniform3f(getUniformLocation(name), vector.x, vector.y, vector.z);
 		}
-		void Shader::setUniform(const GLchar* name, const Vector4 &vector) {
+        void Shader::setUniform(const GLchar* name, glm::vec4 vector) {
 			glUniform4f(getUniformLocation(name), vector.x, vector.y, vector.z, vector.w);
 		}
-		void Shader::setUniform(const GLchar* name, const Matrix4 &matrix) {
-			glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, matrix.elements);
+		void Shader::setUniform(const GLchar* name, glm::mat4 matrix) {
+			glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, &matrix[0][0]);
 		}
 		
 		void Shader::enable() const {

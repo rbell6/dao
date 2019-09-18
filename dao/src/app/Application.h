@@ -8,10 +8,10 @@
 
 #ifndef Application_h
 #define Application_h
+#include <glm/glm.hpp>
 #include <stdio.h>
 #include <time.h>
 #include "graphics/window.hpp"
-#include "math/Math.h"
 #include "utils/Timer.h"
 
 namespace dao {
@@ -21,7 +21,7 @@ namespace dao {
         Timer mTimer, mTime;
         int mExitCode{0};
         bool mShouldExit{false};
-        math::Vector4 mClearColor{0, 0, 0, 1}; //0.8f, 0.8f, 0.8f, 1.0f
+        glm::vec4 mClearColor{0, 0, 0, 1}; //0.8f, 0.8f, 0.8f, 1.0f
 	public:
         Application(): mWindow("Dao", 960, 540) {}
         
@@ -44,7 +44,7 @@ namespace dao {
                     t += 1000;
                     fps = frames;
                     frames = 0;
-                    std::printf("%d fps\n", fps);
+                    printf("%d fps\n", fps);
                 }
             }
             return mExitCode;

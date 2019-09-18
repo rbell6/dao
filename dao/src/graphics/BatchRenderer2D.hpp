@@ -10,10 +10,11 @@
 #define BatchRenderer2D_hpp
 #include <cstddef>
 #include <vector>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_access.hpp>
 #include "Renderer2D.hpp"
 #include "Renderable2D.hpp"
 #include "buffers/IndexBuffer.hpp"
-using namespace std;
 
 namespace dao {
 	namespace graphics {
@@ -34,7 +35,7 @@ namespace dao {
 			IndexBuffer* mIBO;
 			GLsizei mIndexCount;
 			VertexData* mBuffer;
-			vector<GLuint> mTextureSlots;
+            std::vector<GLuint> mTextureSlots;
 			
 			void init();
 		public:

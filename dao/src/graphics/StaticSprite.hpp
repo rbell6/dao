@@ -8,6 +8,7 @@
 
 #ifndef StaticSprite_hpp
 #define StaticSprite_hpp
+#include <glm/glm.hpp>
 #include "Renderable2D.hpp"
 
 namespace dao {
@@ -17,7 +18,7 @@ namespace dao {
 			IndexBuffer* mIndexBuffer{nullptr};
 			Shader& mShader;
 		public:
-			StaticSprite(float x, float y, float width, float height, Vector4& color, Shader& shader);
+            StaticSprite(float x, float y, float width, float height, glm::vec4 color, Shader& shader);
 			~StaticSprite();
 			
 			inline const VertexArray* getVAO() const { return mVertexArray; }

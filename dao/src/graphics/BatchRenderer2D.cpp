@@ -10,6 +10,8 @@
 
 namespace dao {
 	namespace graphics {
+        
+        glm::vec3 multiplyMat4ByVec3(glm::mat4 m, glm::vec3 v);
 		
 		BatchRenderer2D::BatchRenderer2D() {
 			init();
@@ -26,10 +28,10 @@ namespace dao {
 		}
 		
 		void BatchRenderer2D::submit(const Renderable2D* renderable) {
-			const Vector3& position = renderable->getPosition();
-			const Vector2& size = renderable->getSize();
-			const Vector4& color = renderable->getColor();
-			const vector<Vector2>& uv = renderable->getUV();
+            const glm::vec3& position = renderable->getPosition();
+			const glm::vec2& size = renderable->getSize();
+			const glm::vec4& color = renderable->getColor();
+			const vector<glm::vec2>& uv = renderable->getUV();
 			const GLuint textureId = renderable->getTextureId();
 			unsigned int uintColor{0};
 			float textureSlot = 0.0f;
@@ -62,25 +64,25 @@ namespace dao {
 				uintColor = a << 24 | b << 16 | g << 8 | r;
 			}
 			
-			mBuffer->vertex = *mTransformationBack * position;
+            mBuffer->vertex = multiplyMat4ByVec3(*mTransformationBack, position);
 			mBuffer->uv = uv[0];
 			mBuffer->tid = textureSlot;
 			mBuffer->color = uintColor;
 			mBuffer++;
 			
-			mBuffer->vertex = *mTransformationBack * Vector3(position.x, position.y + size.y, position.z);
+            mBuffer->vertex = multiplyMat4ByVec3(*mTransformationBack, glm::vec3(position.x, position.y + size.y, position.z));
 			mBuffer->uv = uv[1];
 			mBuffer->tid = textureSlot;
 			mBuffer->color = uintColor;
 			mBuffer++;
 			
-			mBuffer->vertex = *mTransformationBack * Vector3(position.x + size.x, position.y + size.y, position.z);
+            mBuffer->vertex = multiplyMat4ByVec3(*mTransformationBack, glm::vec3(position.x + size.x, position.y + size.y, position.z));
 			mBuffer->uv = uv[2];
 			mBuffer->tid = textureSlot;
 			mBuffer->color = uintColor;
 			mBuffer++;
 			
-			mBuffer->vertex = *mTransformationBack * Vector3(position.x + size.x, position.y, position.z);
+            mBuffer->vertex = multiplyMat4ByVec3(*mTransformationBack, glm::vec3(position.x + size.x, position.y, position.z));
 			mBuffer->uv = uv[3];
 			mBuffer->tid = textureSlot;
 			mBuffer->color = uintColor;
@@ -144,5 +146,13 @@ namespace dao {
 			mIBO = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 			glBindVertexArray(0);
 		}
+        
+        glm::vec3 multiplyMat4ByVec3(glm::mat4 m, glm::vec3 v) {
+            return glm::vec3(
+                glm::column(m, 0).x * v.x + glm::column(m, 1).x * v.y + glm::column(m, 2).x * v.z + glm::column(m, 3).x,
+                glm::column(m, 0).y * v.x + glm::column(m, 1).y * v.y + glm::column(m, 2).y * v.z + glm::column(m, 3).y,
+                glm::column(m, 0).z * v.x + glm::column(m, 1).z * v.y + glm::column(m, 2).z * v.z + glm::column(m, 3).z
+            );
+        }
 	}
 }

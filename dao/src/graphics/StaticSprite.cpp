@@ -10,8 +10,8 @@
 
 namespace dao {
 	namespace graphics {
-		StaticSprite::StaticSprite(float x, float y, float width, float height, Vector4& color, Shader& shader)
-		: Renderable2D(Vector3(x, y, 0.0f), Vector2(width, height), color), mShader(shader) {
+        StaticSprite::StaticSprite(float x, float y, float width, float height, glm::vec4 color, Shader& shader)
+        : Renderable2D(glm::vec3(x, y, 0.0f), glm::vec2(width, height), color), mShader(shader) {
 			mVertexArray = new VertexArray;
 			GLfloat vertices[] = {
 				0, 0, 0,
