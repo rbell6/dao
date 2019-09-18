@@ -8,7 +8,8 @@
 
 #ifndef IndexBuffer_hpp
 #define IndexBuffer_hpp
-#include <GL/glew.h>
+#include <OpenGL/gl3.h>
+#include <OpenGL/gl3ext.h>
 
 namespace dao {
 	namespace graphics {

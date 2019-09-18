@@ -8,8 +8,8 @@
 
 #ifndef Shader_hpp
 #define Shader_hpp
-
-#include <GL/glew.h>
+#include <OpenGL/gl3.h>
+#include <OpenGL/gl3ext.h>
 #include <iostream>
 #include <string>
 #include "../math/Math.h"

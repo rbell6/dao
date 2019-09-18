@@ -8,7 +8,8 @@
 
 #ifndef Renderer2D_hpp
 #define Renderer2D_hpp
-#include <GL/glew.h>
+#include <OpenGL/gl3.h>
+#include <OpenGL/gl3ext.h>
 #include <vector>
 //#include "Renderable2D.hpp"
 #include "../math/Math.h"

@@ -8,7 +8,8 @@
 
 #ifndef Texture_hpp
 #define Texture_hpp
-#include <GL/glew.h>
+#include <OpenGL/gl3.h>
+#include <OpenGL/gl3ext.h>
 #include <string>
 #include <FreeImage.h>
 #include "../utils/ImageUtils.h"

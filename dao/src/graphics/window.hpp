@@ -8,7 +8,8 @@
 #pragma once
 #include <stdio.h>
 #include <string.h>
-#include <GL/glew.h>
+#include <OpenGL/gl3.h>
+#include <OpenGL/gl3ext.h>
 #include <GLFW/glfw3.h>
 
 namespace dao {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140B101A233192C800291ACB /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 140B1019233192C800291ACB /* libglfw.3.3.dylib */; };
 		141A72BA21A93E7B00892594 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A72B821A93E7B00892594 /* Shader.cpp */; };
 		141A72C121AA821300892594 /* Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A72BF21AA821300892594 /* Buffer.cpp */; };
 		141A72C421AA880400892594 /* IndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A72C221AA880400892594 /* IndexBuffer.cpp */; };
@@ -22,12 +23,9 @@
 		141A730521AFBCD700892594 /* libfreeimage.3.18.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 141A730421AFBCD700892594 /* libfreeimage.3.18.0.dylib */; };
 		141A730821AFD5F900892594 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A730621AFD5F900892594 /* Texture.cpp */; };
 		142944B82175721400F89709 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445506421743A580056F2EA /* OpenGL.framework */; };
-		142944B92175722D00F89709 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14898EDD21743C19000BA462 /* libGLEW.2.1.0.dylib */; };
-		142944BA2175723C00F89709 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14898EDF21743C3E000BA462 /* libglfw.3.2.dylib */; };
 		1445505D217439630056F2EA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1445505C217439630056F2EA /* main.cpp */; };
 		144BC4D221C2DB72002872BE /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 144BC4D021C2DB72002872BE /* Shape.cpp */; };
 		14898EE621743F4A000BA462 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14898EE421743F4A000BA462 /* window.cpp */; };
-		14A6AFBE21B4E2EC0081002E /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A6AFBD21B4E2EC0081002E /* libfreetype.6.dylib */; };
 		14AB3C8121A3CB0900A01C96 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C7F21A3CB0900A01C96 /* Vector2.cpp */; };
 		14AB3C8421A3E51700A01C96 /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C8221A3E51700A01C96 /* Vector3.cpp */; };
 		14AB3C8721A3E52600A01C96 /* Vector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C8521A3E52600A01C96 /* Vector4.cpp */; };
@@ -47,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		140B1019233192C800291ACB /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../usr/local/Cellar/glfw/3.3/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		141A72B221A9370B00892594 /* MathFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathFunctions.h; sourceTree = "<group>"; };
 		141A72B721A93AA500892594 /* FileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 		141A72B821A93E7B00892594 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
@@ -110,10 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14A6AFBE21B4E2EC0081002E /* libfreetype.6.dylib in Frameworks */,
+				140B101A233192C800291ACB /* libglfw.3.3.dylib in Frameworks */,
 				141A730521AFBCD700892594 /* libfreeimage.3.18.0.dylib in Frameworks */,
-				142944BA2175723C00F89709 /* libglfw.3.2.dylib in Frameworks */,
-				142944B92175722D00F89709 /* libGLEW.2.1.0.dylib in Frameworks */,
 				142944B82175721400F89709 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +118,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		140B101B2331B86100291ACB /* gameplay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = gameplay;
+			sourceTree = "<group>";
+		};
 		141A72B321A93A3D00892594 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +200,7 @@
 		1445506321743A580056F2EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				140B1019233192C800291ACB /* libglfw.3.3.dylib */,
 				14A6AFBD21B4E2EC0081002E /* libfreetype.6.dylib */,
 				141A730421AFBCD700892594 /* libfreeimage.3.18.0.dylib */,
 				14898EDF21743C3E000BA462 /* libglfw.3.2.dylib */,
@@ -227,10 +232,11 @@
 			isa = PBXGroup;
 			children = (
 				147039B321E0460D00382426 /* app */,
+				140B101B2331B86100291ACB /* gameplay */,
+				14898EE221743F0C000BA462 /* graphics */,
+				14AB3C8821A3E96D00A01C96 /* math */,
 				141A72BB21A945F000892594 /* shaders */,
 				141A72B321A93A3D00892594 /* utils */,
-				14AB3C8821A3E96D00A01C96 /* math */,
-				14898EE221743F0C000BA462 /* graphics */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -479,10 +485,11 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
-					/usr/local/Cellar/glfw/3.2.1/include,
+					/usr/local/Cellar/glfw/3.3/include,
 					/usr/local/Cellar/glew/2.1.0/include,
 					/usr/local/Cellar/freeimage/3.18.0/include,
 					/usr/local/Cellar/freetype/2.9.1/include,
+					/usr/local/Cellar/glm/0.9.9.5/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,8 +497,10 @@
 					/usr/local/Cellar/glfw/3.2.1/lib,
 					/usr/local/Cellar/freeimage/3.18.0/lib,
 					/usr/local/Cellar/freetype/2.9.1/lib,
+					/usr/local/Cellar/glfw/3.3/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/dao/src";
 			};
 			name = Debug;
 		};
@@ -501,10 +510,11 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
-					/usr/local/Cellar/glfw/3.2.1/include,
+					/usr/local/Cellar/glfw/3.3/include,
 					/usr/local/Cellar/glew/2.1.0/include,
 					/usr/local/Cellar/freeimage/3.18.0/include,
 					/usr/local/Cellar/freetype/2.9.1/include,
+					/usr/local/Cellar/glm/0.9.9.5/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -512,8 +522,10 @@
 					/usr/local/Cellar/glfw/3.2.1/lib,
 					/usr/local/Cellar/freeimage/3.18.0/lib,
 					/usr/local/Cellar/freetype/2.9.1/lib,
+					/usr/local/Cellar/glfw/3.3/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/dao/src";
 			};
 			name = Release;
 		};
