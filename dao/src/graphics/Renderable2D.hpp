@@ -40,6 +40,7 @@ namespace dao {
 			Renderable2D();
 		public:
 			Renderable2D(Vector3 position, Vector2 size, Vector4 color);
+            Renderable2D(Vector3 position, Vector2 size, Texture* texture);
 			
 			virtual void submit(Renderer2D* renderer) const {
 				renderer->submit(this);

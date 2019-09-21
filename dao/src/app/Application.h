@@ -22,6 +22,8 @@ namespace dao {
         int mExitCode{0};
         bool mShouldExit{false};
         math::Vector4 mClearColor{0, 0, 0, 1}; //0.8f, 0.8f, 0.8f, 1.0f
+        Application* mInstance;
+        int mFPS{0}, mFrames{0};
 	public:
         Application(): mWindow("Dao", 960, 540) {}
         
@@ -30,7 +32,6 @@ namespace dao {
         int run() {
             glClearColor(mClearColor.x, mClearColor.y, mClearColor.z, mClearColor.w);
             long long t = 0;
-            int fps{0}, frames{0};
             while (!mWindow.closed()) {
                 mTimer.reset();
                 mWindow.clear();
@@ -39,17 +40,18 @@ namespace dao {
                 
                 mWindow.update();
                 
-                frames++;
+                mFrames++;
                 if (mTime.elapsed().count() - t > 1000) {
                     t += 1000;
-                    fps = frames;
-                    frames = 0;
-                    std::printf("%d fps\n", fps);
+                    mFPS = mFrames;
+                    mFrames = 0;
+                    std::printf("%d fps\n", mFPS);
                 }
             }
             return mExitCode;
         }
 	};
+    Application* app;
 }
 
 #endif /* Application_h */

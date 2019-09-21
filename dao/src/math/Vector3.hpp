@@ -9,6 +9,7 @@
 #ifndef Vector3_hpp
 #define Vector3_hpp
 #include <iostream>
+#include <math.h>
 
 namespace dao {
 	namespace math {
@@ -16,6 +17,7 @@ namespace dao {
 			float x, y, z;
 			Vector3();
 			Vector3(const float& x, const float& y, const float& z);
+            Vector3 normalized();
 			Vector3& add(const Vector3& other);
 			Vector3& subtract(const Vector3& other);
 			Vector3& multiply(const Vector3& other);
@@ -33,6 +35,9 @@ namespace dao {
 			Vector3& operator -=(const Vector3& other);
 			Vector3& operator *=(const Vector3& other);
 			Vector3& operator /=(const Vector3& other);
+            
+            static Vector3 cross(Vector3 v1, Vector3 v2);
+            static float dot(Vector3 v1, Vector3 v2);
 			
 			friend std::ostream& operator <<(std::ostream& stream, const Vector3& vector);
 		};

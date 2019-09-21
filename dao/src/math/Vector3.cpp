@@ -12,6 +12,11 @@ namespace dao {
 	namespace math {
 		Vector3::Vector3(): x(0.0f), y(0.0f), z(0.0f) {}
 		Vector3::Vector3(const float& x, const float& y, const float& z): x(x), y(y), z(z) {}
+        
+        Vector3 Vector3::normalized() {
+            double magnitude = sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
+            return Vector3(x / magnitude, y / magnitude, z / magnitude);
+        }
 		
 		Vector3& Vector3::add(const Vector3& other) {
 			x += other.x;
@@ -72,6 +77,21 @@ namespace dao {
 			return divide(other);
 		}
 		
+        Vector3 Vector3::cross(Vector3 v1, Vector3 v2) {
+            return Vector3(
+                v1.y * v2.z - v1.z * v2.y,
+                v1.x * v2.z - v1.z * v2.x,
+                v1.x * v2.x - v1.x * v2.x
+            );
+        }
+        
+        float Vector3::dot(Vector3 v1, Vector3 v2) {
+            float product = 0.0f;
+            product += v1.x * v2.x;
+            product += v1.y * v2.y;
+            product += v1.z * v2.z;
+            return product;
+        }
 		
 		std::ostream& operator <<(std::ostream& stream, const Vector3& vector) {
 			stream << "Vector3: (" << vector.x << ", " << vector.y << ", " << vector.z << ")";

@@ -8,6 +8,6 @@
 #include "src/app/Sprite50K.h"
 
 int main(void) {
-    dao::Sprite50K app;
-    return app.run();
+    dao::app = new dao::Sprite50K();
+    return dao::app->run();
 }

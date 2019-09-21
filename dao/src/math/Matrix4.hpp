@@ -42,6 +42,7 @@ namespace dao {
 			static Matrix4 translation(const Vector3& translation);
 			static Matrix4 rotation(float angle, const Vector3& axis);
 			static Matrix4 scale(const Vector3& scale);
+            static Matrix4 lookAt(Vector3 eye, Vector3 center, Vector3 up);
 		};
 	}
 }

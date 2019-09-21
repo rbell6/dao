@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		140B101A233192C800291ACB /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 140B1019233192C800291ACB /* libglfw.3.3.dylib */; };
+		140B10202331EE1D00291ACB /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 140B101E2331EE1D00291ACB /* Camera.cpp */; };
 		141A72BA21A93E7B00892594 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A72B821A93E7B00892594 /* Shader.cpp */; };
 		141A72C121AA821300892594 /* Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A72BF21AA821300892594 /* Buffer.cpp */; };
 		141A72C421AA880400892594 /* IndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141A72C221AA880400892594 /* IndexBuffer.cpp */; };
@@ -25,6 +26,11 @@
 		142944B82175721400F89709 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445506421743A580056F2EA /* OpenGL.framework */; };
 		1445505D217439630056F2EA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1445505C217439630056F2EA /* main.cpp */; };
 		144BC4D221C2DB72002872BE /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 144BC4D021C2DB72002872BE /* Shape.cpp */; };
+		146BC9752332DFE9001FED6E /* StaticGridMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 146BC9732332DFE9001FED6E /* StaticGridMap.cpp */; };
+		146BC9792332E09C001FED6E /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 146BC9772332E09C001FED6E /* Entity.cpp */; };
+		146BC97D2332E2C2001FED6E /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 146BC97B2332E2C2001FED6E /* Component.cpp */; };
+		146BC9802332EE4F001FED6E /* TileLayerEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 146BC97E2332EE4F001FED6E /* TileLayerEntity.cpp */; };
+		146BC9832334A390001FED6E /* SpriteEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 146BC9812334A390001FED6E /* SpriteEntity.cpp */; };
 		14898EE621743F4A000BA462 /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14898EE421743F4A000BA462 /* window.cpp */; };
 		14AB3C8121A3CB0900A01C96 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C7F21A3CB0900A01C96 /* Vector2.cpp */; };
 		14AB3C8421A3E51700A01C96 /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AB3C8221A3E51700A01C96 /* Vector3.cpp */; };
@@ -46,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		140B1019233192C800291ACB /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../usr/local/Cellar/glfw/3.3/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		140B101E2331EE1D00291ACB /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		140B101F2331EE1D00291ACB /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 		141A72B221A9370B00892594 /* MathFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathFunctions.h; sourceTree = "<group>"; };
 		141A72B721A93AA500892594 /* FileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 		141A72B821A93E7B00892594 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
@@ -86,6 +94,16 @@
 		1445506421743A580056F2EA /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		144BC4D021C2DB72002872BE /* Shape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shape.cpp; sourceTree = "<group>"; };
 		144BC4D121C2DB72002872BE /* Shape.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shape.hpp; sourceTree = "<group>"; };
+		146BC9732332DFE9001FED6E /* StaticGridMap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StaticGridMap.cpp; sourceTree = "<group>"; };
+		146BC9742332DFE9001FED6E /* StaticGridMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StaticGridMap.hpp; sourceTree = "<group>"; };
+		146BC9772332E09C001FED6E /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		146BC9782332E09C001FED6E /* Entity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Entity.hpp; sourceTree = "<group>"; };
+		146BC97B2332E2C2001FED6E /* Component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
+		146BC97C2332E2C2001FED6E /* Component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Component.hpp; sourceTree = "<group>"; };
+		146BC97E2332EE4F001FED6E /* TileLayerEntity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TileLayerEntity.cpp; sourceTree = "<group>"; };
+		146BC97F2332EE4F001FED6E /* TileLayerEntity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TileLayerEntity.hpp; sourceTree = "<group>"; };
+		146BC9812334A390001FED6E /* SpriteEntity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteEntity.cpp; sourceTree = "<group>"; };
+		146BC9822334A390001FED6E /* SpriteEntity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpriteEntity.hpp; sourceTree = "<group>"; };
 		147039B421E0465700382426 /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		147039B521E046B700382426 /* Sprite50K.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sprite50K.h; sourceTree = "<group>"; };
 		14898EDD21743C19000BA462 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
@@ -121,8 +139,30 @@
 		140B101B2331B86100291ACB /* gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				146BC97A2332E2B1001FED6E /* components */,
+				146BC9762332E064001FED6E /* entities */,
+				146BC9722332DFBF001FED6E /* levels */,
+				140B101C2331EC9100291ACB /* maps */,
 			);
 			path = gameplay;
+			sourceTree = "<group>";
+		};
+		140B101C2331EC9100291ACB /* maps */ = {
+			isa = PBXGroup;
+			children = (
+				146BC9732332DFE9001FED6E /* StaticGridMap.cpp */,
+				146BC9742332DFE9001FED6E /* StaticGridMap.hpp */,
+			);
+			path = maps;
+			sourceTree = "<group>";
+		};
+		140B101D2331EE0800291ACB /* cameras */ = {
+			isa = PBXGroup;
+			children = (
+				140B101E2331EE1D00291ACB /* Camera.cpp */,
+				140B101F2331EE1D00291ACB /* Camera.hpp */,
+			);
+			path = cameras;
 			sourceTree = "<group>";
 		};
 		141A72B321A93A3D00892594 /* utils */ = {
@@ -219,6 +259,35 @@
 			path = shapes;
 			sourceTree = "<group>";
 		};
+		146BC9722332DFBF001FED6E /* levels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = levels;
+			sourceTree = "<group>";
+		};
+		146BC9762332E064001FED6E /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				146BC9772332E09C001FED6E /* Entity.cpp */,
+				146BC9782332E09C001FED6E /* Entity.hpp */,
+				146BC97E2332EE4F001FED6E /* TileLayerEntity.cpp */,
+				146BC97F2332EE4F001FED6E /* TileLayerEntity.hpp */,
+				146BC9812334A390001FED6E /* SpriteEntity.cpp */,
+				146BC9822334A390001FED6E /* SpriteEntity.hpp */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		146BC97A2332E2B1001FED6E /* components */ = {
+			isa = PBXGroup;
+			children = (
+				146BC97B2332E2C2001FED6E /* Component.cpp */,
+				146BC97C2332E2C2001FED6E /* Component.hpp */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		147039B321E0460D00382426 /* app */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,11 +313,12 @@
 		14898EE221743F0C000BA462 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				140B101D2331EE0800291ACB /* cameras */,
 				144BC4CF21C2DB4C002872BE /* shapes */,
 				141A72FA21ADF41900892594 /* layers */,
 				141A72BE21AA81CC00892594 /* buffers */,
-				14898EE521743F4A000BA462 /* window.hpp */,
 				14898EE421743F4A000BA462 /* window.cpp */,
+				14898EE521743F4A000BA462 /* window.hpp */,
 				141A72B821A93E7B00892594 /* Shader.cpp */,
 				141A72B921A93E7B00892594 /* Shader.hpp */,
 				141A72C821AB483100892594 /* Renderable2D.cpp */,
@@ -342,11 +412,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AB3C8721A3E52600A01C96 /* Vector4.cpp in Sources */,
+				146BC97D2332E2C2001FED6E /* Component.cpp in Sources */,
 				141A730321AFA9E200892594 /* Group.cpp in Sources */,
 				1445505D217439630056F2EA /* main.cpp in Sources */,
 				14AB3C8121A3CB0900A01C96 /* Vector2.cpp in Sources */,
 				141A72C721AA8CC400892594 /* VertexArray.cpp in Sources */,
 				141A72DA21ABEE7B00892594 /* StaticSprite.cpp in Sources */,
+				146BC9752332DFE9001FED6E /* StaticGridMap.cpp in Sources */,
 				14AB3C8C21A3EE2400A01C96 /* Matrix4.cpp in Sources */,
 				144BC4D221C2DB72002872BE /* Shape.cpp in Sources */,
 				141A72BA21A93E7B00892594 /* Shader.cpp in Sources */,
@@ -357,10 +429,14 @@
 				141A72D021AB795E00892594 /* Simple2DRenderer.cpp in Sources */,
 				141A730821AFD5F900892594 /* Texture.cpp in Sources */,
 				14898EE621743F4A000BA462 /* window.cpp in Sources */,
+				140B10202331EE1D00291ACB /* Camera.cpp in Sources */,
 				141A72CA21AB483100892594 /* Renderable2D.cpp in Sources */,
+				146BC9802332EE4F001FED6E /* TileLayerEntity.cpp in Sources */,
+				146BC9792332E09C001FED6E /* Entity.cpp in Sources */,
 				141A72D721ABEE6D00892594 /* Sprite.cpp in Sources */,
 				141A730021ADF9D000892594 /* TileLayer.cpp in Sources */,
 				141A72C421AA880400892594 /* IndexBuffer.cpp in Sources */,
+				146BC9832334A390001FED6E /* SpriteEntity.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

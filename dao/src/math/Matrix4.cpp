@@ -140,5 +140,29 @@ namespace dao {
 			result.elements[2 + 2 * 4] = scale.z;
 			return result;
 		}
+        
+        Matrix4 Matrix4::lookAt(Vector3 eye, Vector3 center, Vector3 up) {
+            Vector3 f = (center - eye).normalized();
+            Vector3 u = up.normalized();
+            Vector3 s = Vector3::cross(f, u).normalized();
+            u = Vector3::cross(s, f);
+            Matrix4 result = Matrix4::identity();
+            result.columns[0].x = s.x;
+            result.columns[1].x = s.y;
+            result.columns[2].x = s.z;
+            
+            result.columns[0].y = u.x;
+            result.columns[1].y = u.x;
+            result.columns[2].y = u.x;
+            
+            result.columns[0].z = -f.x;
+            result.columns[1].z = -f.x;
+            result.columns[2].z = -f.x;
+            
+            result.columns[3].x = -Vector3::dot(s, eye);
+            result.columns[3].y = -Vector3::dot(u, eye);
+            result.columns[3].z = Vector3::dot(f, eye);
+            return result;
+        }
 	}
 }

@@ -8,6 +8,7 @@
 
 #ifndef MathFunctions_h
 #define MathFunctions_h
+#include <math.h>
 
 namespace dao {
 	namespace math {

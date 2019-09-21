@@ -18,5 +18,7 @@ namespace dao {
 		: mPosition(position), mSize(size), mColor(color) {
 			setUVDefaults(); 
 		}
+        
+        Renderable2D::Renderable2D(Vector3 position, Vector2 size, Texture* texture): mPosition(position), mSize(size), mTexture(texture) {}
 	}
 }
