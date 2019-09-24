@@ -10,34 +10,34 @@
 
 namespace dao {
 	namespace math {
-		Vector4::Vector4(const float& x, const float& y, const float& z, const float& w): x(x), y(y), z(z), w(w) {}
+		Vector4::Vector4(const float& x, const float& y, const float& z, const float& w): data(x, y, z, w) {}
 		
 		Vector4& Vector4::add(const Vector4& other) {
-			x += other.x;
-			y += other.y;
-			z += other.z;
-			w += other.w;
+			data.x += other.data.x;
+			data.y += other.data.y;
+			data.z += other.data.z;
+			data.w += other.data.w;
 			return *this;
 		}
 		Vector4& Vector4::subtract(const Vector4& other) {
-			x -= other.x;
-			y -= other.y;
-			z -= other.z;
-			w -= other.w;
+			data.x -= other.data.x;
+			data.y -= other.data.y;
+			data.z -= other.data.z;
+			data.w -= other.data.w;
 			return *this;
 		}
 		Vector4& Vector4::multiply(const Vector4& other) {
-			x *= other.x;
-			y *= other.y;
-			z *= other.z;
-			w *= other.w;
+			data.x *= other.data.x;
+			data.y *= other.data.y;
+			data.z *= other.data.z;
+			data.w *= other.data.w;
 			return *this;
 		}
 		Vector4& Vector4::divide(const Vector4& other) {
-			x /= other.x;
-			y /= other.y;
-			z /= other.z;
-			w /= other.w;
+			data.x /= other.data.x;
+			data.y /= other.data.y;
+			data.z /= other.data.z;
+			data.w /= other.data.w;
 			return *this;
 		}
 		
@@ -56,11 +56,11 @@ namespace dao {
 		
 		bool Vector4::operator ==(const Vector4& other) {
 			return (
-					x == other.x and
-					y == other.y and
-					z == other.z and
-					w == other.w
-					);
+				data.x == other.data.x and
+				data.y == other.data.y and
+				data.z == other.data.z and
+				data.w == other.data.w
+			);
 		}
 		
 		bool Vector4::operator !=(const Vector4& other) {
@@ -82,7 +82,7 @@ namespace dao {
 		
 		
 		std::ostream& operator <<(std::ostream& stream, const Vector4& vector) {
-			stream << "Vector4: (" << vector.x << ", " << vector.y << ", " << vector.z << ", " << vector.w << ")";
+			stream << "Vector4: (" << vector.data.x << ", " << vector.data.y << ", " << vector.data.z << ", " << vector.data.w << ")";
 			return stream;
 		}
 	}

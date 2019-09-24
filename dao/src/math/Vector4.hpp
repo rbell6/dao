@@ -9,11 +9,12 @@
 #ifndef Vector4_hpp
 #define Vector4_hpp
 #include <iostream>
+#include <glm/glm.hpp>
 
 namespace dao {
 	namespace math {
 		struct Vector4 {
-			float x, y, z, w;
+			glm::vec4 data;
 			Vector4() = default;
 			Vector4(const float& x, const float& y, const float& z, const float& w);
 			Vector4& add(const Vector4& other);

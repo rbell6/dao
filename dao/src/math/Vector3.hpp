@@ -10,11 +10,13 @@
 #define Vector3_hpp
 #include <iostream>
 #include <math.h>
+#include <glm/glm.hpp>
 
 namespace dao {
 	namespace math {
 		struct Vector3 {
-			float x, y, z;
+			
+			glm::vec3 data;
 			Vector3();
 			Vector3(const float& x, const float& y, const float& z);
             Vector3 normalized();

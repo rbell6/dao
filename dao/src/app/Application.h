@@ -23,14 +23,15 @@ namespace dao {
         bool mShouldExit{false};
         math::Vector4 mClearColor{0, 0, 0, 1}; //0.8f, 0.8f, 0.8f, 1.0f
         Application* mInstance;
-        int mFPS{0}, mFrames{0};
+		int mFPS{0}, mFrames{0};
+		double mDelta{0}, mTotal{0};
 	public:
         Application(): mWindow("Dao", 960, 540) {}
         
         virtual void update() = 0;
         
         int run() {
-            glClearColor(mClearColor.x, mClearColor.y, mClearColor.z, mClearColor.w);
+            glClearColor(mClearColor.data.x, mClearColor.data.y, mClearColor.data.z, mClearColor.data.w);
             long long t = 0;
             while (!mWindow.closed()) {
                 mTimer.reset();

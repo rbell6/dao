@@ -9,11 +9,12 @@
 #ifndef Vector2_hpp
 #define Vector2_hpp
 #include <iostream>
+#include <glm/glm.hpp>
 
 namespace dao {
 	namespace math {
 		struct Vector2 {
-			float x, y;
+			glm::vec2 data;
 			Vector2();
 			Vector2(const float& x, const float& y);
 			Vector2& add(const Vector2& other);

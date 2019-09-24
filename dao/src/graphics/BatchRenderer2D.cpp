@@ -54,10 +54,10 @@ namespace dao {
 					textureSlot = (float) (mTextureSlots.size());
 				}
 			} else {
-				int r = color.x * 255.0f;
-				int g = color.y * 255.0f;
-				int b = color.z * 255.0f;
-				int a = color.w * 255.0f;
+				int r = color.data.x * 255.0f;
+				int g = color.data.y * 255.0f;
+				int b = color.data.z * 255.0f;
+				int a = color.data.w * 255.0f;
 				
 				uintColor = a << 24 | b << 16 | g << 8 | r;
 			}
@@ -68,19 +68,19 @@ namespace dao {
 			mBuffer->color = uintColor;
 			mBuffer++;
 			
-			mBuffer->vertex = *mTransformationBack * Vector3(position.x, position.y + size.y, position.z);
+			mBuffer->vertex = *mTransformationBack * Vector3(position.data.x, position.data.y + size.data.y, position.data.z);
 			mBuffer->uv = uv[1];
 			mBuffer->tid = textureSlot;
 			mBuffer->color = uintColor;
 			mBuffer++;
 			
-			mBuffer->vertex = *mTransformationBack * Vector3(position.x + size.x, position.y + size.y, position.z);
+			mBuffer->vertex = *mTransformationBack * Vector3(position.data.x + size.data.x, position.data.y + size.data.y, position.data.z);
 			mBuffer->uv = uv[2];
 			mBuffer->tid = textureSlot;
 			mBuffer->color = uintColor;
 			mBuffer++;
 			
-			mBuffer->vertex = *mTransformationBack * Vector3(position.x + size.x, position.y, position.z);
+			mBuffer->vertex = *mTransformationBack * Vector3(position.data.x + size.data.x, position.data.y, position.data.z);
 			mBuffer->uv = uv[3];
 			mBuffer->tid = textureSlot;
 			mBuffer->color = uintColor;

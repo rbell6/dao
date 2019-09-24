@@ -28,9 +28,9 @@ namespace dao {
         
         void Camera::updateCameraVectors() {
             Vector3 front;
-            front.x = cos(toRadians(mYaw)) * cos(toRadians(mPitch));
-            front.y = sin(toRadians(mPitch));
-            front.z = sin(toRadians(mYaw)) * cos(toRadians(mPitch));
+            front.data.x = cos(toRadians(mYaw)) * cos(toRadians(mPitch));
+            front.data.y = sin(toRadians(mPitch));
+            front.data.z = sin(toRadians(mYaw)) * cos(toRadians(mPitch));
             mFront = front.normalized();
             mRight = Vector3::cross(mFront, mWorldUp).normalized();
             mUp = Vector3::cross(mRight, mFront).normalized();

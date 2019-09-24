@@ -10,27 +10,27 @@
 
 namespace dao {
 	namespace math {
-		Vector2::Vector2(): x(0.0f), y(0.0f) {}
-		Vector2::Vector2(const float& x, const float& y): x(x), y(y) {}
+		Vector2::Vector2(): data(0.0f, 0.0f) {}
+		Vector2::Vector2(const float& x, const float& y): data(x, y) {}
 		
 		Vector2& Vector2::add(const Vector2& other) {
-			x += other.x;
-			y += other.y;
+			data.x += other.data.x;
+			data.y += other.data.y;
 			return *this;
 		}
 		Vector2& Vector2::subtract(const Vector2& other) {
-			x -= other.x;
-			y -= other.y;
+			data.x -= other.data.x;
+			data.y -= other.data.y;
 			return *this;
 		}
 		Vector2& Vector2::multiply(const Vector2& other) {
-			x *= other.x;
-			y *= other.y;
+			data.x *= other.data.x;
+			data.y *= other.data.y;
 			return *this;
 		}
 		Vector2& Vector2::divide(const Vector2& other) {
-			x /= other.x;
-			y /= other.y;
+			data.x /= other.data.x;
+			data.y /= other.data.y;
 			return *this;
 		}
 		
@@ -48,7 +48,7 @@ namespace dao {
 		}
 		
 		bool Vector2::operator ==(const Vector2& other) {
-			return x == other.x and y == other.y;
+			return data.x == other.data.x and data.y == other.data.y;
 		}
 		
 		bool Vector2::operator !=(const Vector2& other) {
@@ -70,7 +70,7 @@ namespace dao {
 		
 		
 		std::ostream& operator <<(std::ostream& stream, const Vector2& vector) {
-			stream << "Vector2: (" << vector.x << ", " << vector.y << ")";
+			stream << "Vector2: (" << vector.data.x << ", " << vector.data.y << ")";
 			return stream;
 		}
 	}

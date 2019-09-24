@@ -8,23 +8,22 @@
 
 #ifndef Sprite50K_h
 #define Sprite50K_h
+#include <cstdlib>
 #include "Application.h"
-#include "graphics/Shader.hpp"
+#include "graphics/shaders/ShaderManager.hpp"
 #include "graphics/layers/TileLayer.hpp"
 #include "graphics/Sprite.hpp"
 #include "gameplay/entities/TileLayerEntity.hpp"
 
 namespace dao {
     class Sprite50K: public Application {
-        graphics::Shader* mShader;
+		graphics::ShaderProgram* mShader = graphics::ShaderManager::createShaderProgram(graphics::shaders::basic);
         gameplay::TileLayerEntity mRootEntity;
-        //graphics::TileLayer mPrimaryLayer;
         
     public:
-        Sprite50K()
-        : mShader(new graphics::Shader("src/shaders/basic.vert", "src/shaders/basic.frag")), mRootEntity(mShader), Application() {
+        Sprite50K(): mRootEntity(mShader), Application() {
             mShader->enable();
-            mShader->setUniform("pr_matrix", Matrix4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
+            mShader->setUniform("projection", Matrix4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
             for (float y{-9.0f}; y < 9.0f; y += 0.1f) {
                 for (float x{-16.0f}; x < 16.0f; x += 0.1f) {
                     math::Vector4 color = math::Vector4(rand() % 1000 / 1000.f, 0, 1, 1);

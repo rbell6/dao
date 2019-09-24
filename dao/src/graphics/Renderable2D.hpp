@@ -49,6 +49,11 @@ namespace dao {
 			inline const Vector3& getPosition() const { return mPosition; }
 			inline const Vector2& getSize() const { return mSize; }
 			inline const Vector4& getColor() const { return mColor; }
+			
+			inline void setPosition(Vector3 position) { mPosition = position; }
+			inline void setSize(Vector2 size) { mSize = size; }
+			inline void setColor(Vector4 color) { mColor = color; }
+			
 			inline const vector<Vector2>& getUV() const { return mUV; }
 			inline const GLuint getTextureId() const { return mTexture == nullptr ? 0 : mTexture->getId(); }
 		private:

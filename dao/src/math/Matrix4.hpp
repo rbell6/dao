@@ -10,6 +10,9 @@
 #define Matrix4_hpp
 
 #define _USE_MATH_DEFINES
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <math.h>
 #include "Vector3.hpp"
 #include "Vector4.hpp"
@@ -19,10 +22,8 @@ namespace dao {
 	namespace math {
 		
 		struct Matrix4 {
-			union {
-				float elements[4 * 4];
-				Vector4 columns[4];
-			};
+			glm::mat4 matrix;
+
 			Matrix4();
 			Matrix4(float diagonal);
 			
@@ -43,6 +44,9 @@ namespace dao {
 			static Matrix4 rotation(float angle, const Vector3& axis);
 			static Matrix4 scale(const Vector3& scale);
             static Matrix4 lookAt(Vector3 eye, Vector3 center, Vector3 up);
+			
+			const float* getElements() const { return glm::value_ptr(matrix); }
+			//const Vector4* getColumns() const { return {}; }
 		};
 	}
 }

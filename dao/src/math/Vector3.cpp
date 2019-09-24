@@ -10,36 +10,36 @@
 
 namespace dao {
 	namespace math {
-		Vector3::Vector3(): x(0.0f), y(0.0f), z(0.0f) {}
-		Vector3::Vector3(const float& x, const float& y, const float& z): x(x), y(y), z(z) {}
+		Vector3::Vector3(): data(0.0f, 0.0f, 0.0f) {}
+		Vector3::Vector3(const float& x, const float& y, const float& z): data(x, y, z) {}
         
         Vector3 Vector3::normalized() {
-            double magnitude = sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
-            return Vector3(x / magnitude, y / magnitude, z / magnitude);
+            double magnitude = sqrt(pow(data.x, 2) + pow(data.y, 2) + pow(data.z, 2));
+            return Vector3(data.x / magnitude, data.y / magnitude, data.z / magnitude);
         }
 		
 		Vector3& Vector3::add(const Vector3& other) {
-			x += other.x;
-			y += other.y;
-			z += other.z;
+			data.x += other.data.x;
+			data.y += other.data.y;
+			data.z += other.data.z;
 			return *this;
 		}
 		Vector3& Vector3::subtract(const Vector3& other) {
-			x -= other.x;
-			y -= other.y;
-			z -= other.z;
+			data.x -= other.data.x;
+			data.y -= other.data.y;
+			data.z -= other.data.z;
 			return *this;
 		}
 		Vector3& Vector3::multiply(const Vector3& other) {
-			x *= other.x;
-			y *= other.y;
-			z *= other.z;
+			data.x *= other.data.x;
+			data.y *= other.data.y;
+			data.z *= other.data.z;
 			return *this;
 		}
 		Vector3& Vector3::divide(const Vector3& other) {
-			x /= other.x;
-			y /= other.y;
-			z /= other.z;
+			data.x /= other.data.x;
+			data.y /= other.data.y;
+			data.z /= other.data.z;
 			return *this;
 		}
 		
@@ -57,7 +57,7 @@ namespace dao {
 		}
 		
 		bool Vector3::operator ==(const Vector3& other) {
-			return x == other.x and y == other.y and z == other.z;
+			return data.x == other.data.x and data.y == other.data.y and data.z == other.data.z;
 		}
 		
 		bool Vector3::operator !=(const Vector3& other) {
@@ -79,22 +79,22 @@ namespace dao {
 		
         Vector3 Vector3::cross(Vector3 v1, Vector3 v2) {
             return Vector3(
-                v1.y * v2.z - v1.z * v2.y,
-                v1.x * v2.z - v1.z * v2.x,
-                v1.x * v2.x - v1.x * v2.x
+                v1.data.y * v2.data.z - v1.data.z * v2.data.y,
+                v1.data.x * v2.data.z - v1.data.z * v2.data.x,
+                v1.data.x * v2.data.x - v1.data.x * v2.data.x
             );
         }
         
         float Vector3::dot(Vector3 v1, Vector3 v2) {
             float product = 0.0f;
-            product += v1.x * v2.x;
-            product += v1.y * v2.y;
-            product += v1.z * v2.z;
+            product += v1.data.x * v2.data.x;
+            product += v1.data.y * v2.data.y;
+            product += v1.data.z * v2.data.z;
             return product;
         }
 		
 		std::ostream& operator <<(std::ostream& stream, const Vector3& vector) {
-			stream << "Vector3: (" << vector.x << ", " << vector.y << ", " << vector.z << ")";
+			stream << "Vector3: (" << vector.data.x << ", " << vector.data.y << ", " << vector.data.z << ")";
 			return stream;
 		}
 	}

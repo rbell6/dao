@@ -16,7 +16,7 @@ namespace dao {
         class TileLayerEntity : public Entity {
             graphics::TileLayer mLayer;
         public:
-            TileLayerEntity(graphics::Shader* shader): mLayer(shader) {}
+            TileLayerEntity(graphics::ShaderProgram* shader): mLayer(shader) {}
             TileLayerEntity(graphics::TileLayer layer): mLayer(layer) {}
             
             void update() {
