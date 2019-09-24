@@ -8,7 +8,8 @@
 
 #ifndef TileLayer_hpp
 #define TileLayer_hpp
-
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include "Layer.hpp"
 #include "graphics/BatchRenderer2D.hpp"
 

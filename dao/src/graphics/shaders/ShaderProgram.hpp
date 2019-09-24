@@ -12,12 +12,12 @@
 #include <OpenGL/gl3ext.h>
 #include <iostream>
 #include <string>
-#include "math/Math.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include "graphics/shaders/Shader.hpp"
 
 namespace dao {
 	namespace graphics {
-		using namespace math;
 		
 		class ShaderProgram {
 			GLuint mId;
@@ -29,10 +29,10 @@ namespace dao {
 			void setUniform(const GLchar* name, const float value);
 			void setUniform(const GLchar* name, int* value, int count);
 			void setUniform(const GLchar* name, const int value);
-			void setUniform(const GLchar* name, const Vector2 &vector);
-			void setUniform(const GLchar* name, const Vector3 &vector);
-			void setUniform(const GLchar* name, const Vector4 &vector);
-			void setUniform(const GLchar* name, const Matrix4 &matrix);
+			void setUniform(const GLchar* name, glm::vec2 vector);
+			void setUniform(const GLchar* name, glm::vec3 vector);
+			void setUniform(const GLchar* name, glm::vec4 vector);
+			void setUniform(const GLchar* name, glm::mat4 matrix);
 			void attachShader(Shader* shader);
 			void link();
 			void validate();

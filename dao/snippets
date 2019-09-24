@@ -203,3 +203,25 @@ delete shader;
 return 0;
 }
 
+
+
+
+std::cout << "which app do you want to run?" << std::endl;
+	std::cout << "\t1: 50k+ Sprites" << std::endl;
+	std::cout << "\t2: Animation experiments\n" << std::endl;
+	std::cout << "> ";
+	int selection = getchar();
+	switch (selection) {
+		default:
+		case 1:
+			std::cout << "you picked " << selection << std::endl;
+			dao::app = new dao::Sprite50K();
+			break;
+		case 2:
+			std::cout << "you picked " << selection << std::endl;
+			dao::app = new dao::AnimationApp();
+			break;
+	}
+#else
+	dao::app = new dao::Sprite50K();
+#endif

@@ -9,59 +9,57 @@
 #ifndef Renderable2D_hpp
 #define Renderable2D_hpp
 #include <vector>
+#include <glm/glm.hpp>
 #include "buffers/Buffer.hpp"
 #include "buffers/IndexBuffer.hpp"
 #include "buffers/VertexArray.hpp"
-#include "../math/Math.h"
 #include "Shader.hpp"
 #include "Renderer2D.hpp"
 #include "Texture.hpp"
-using namespace std;
 
 namespace dao {
 	namespace graphics {
-		using namespace math;
 		
 		struct VertexData {
-			Vector3 vertex;
-			Vector2 uv;
+			glm::vec3 vertex;
+			glm::vec2 uv;
 			float tid;
 			unsigned int color;
 		};
 		
 		class Renderable2D {
 		protected:
-			Vector3 mPosition;
-			Vector2 mSize;
-			Vector4 mColor;
-			vector<Vector2> mUV;
+			glm::vec3 mPosition;
+			glm::vec2 mSize;
+			glm::vec4 mColor;
+			std::vector<glm::vec2> mUV;
 			Texture* mTexture{nullptr};
 			
 			Renderable2D();
 		public:
-			Renderable2D(Vector3 position, Vector2 size, Vector4 color);
-            Renderable2D(Vector3 position, Vector2 size, Texture* texture);
+			Renderable2D(glm::vec3 position, glm::vec2 size, glm::vec4 color);
+            Renderable2D(glm::vec3 position, glm::vec2 size, Texture* texture);
 			
 			virtual void submit(Renderer2D* renderer) const {
 				renderer->submit(this);
 			}
 			
-			inline const Vector3& getPosition() const { return mPosition; }
-			inline const Vector2& getSize() const { return mSize; }
-			inline const Vector4& getColor() const { return mColor; }
+			inline const glm::vec3& getPosition() const { return mPosition; }
+			inline const glm::vec2& getSize() const { return mSize; }
+			inline const glm::vec4& getColor() const { return mColor; }
 			
-			inline void setPosition(Vector3 position) { mPosition = position; }
-			inline void setSize(Vector2 size) { mSize = size; }
-			inline void setColor(Vector4 color) { mColor = color; }
+			inline void setPosition(glm::vec3 position) { mPosition = position; }
+			inline void setSize(glm::vec2 size) { mSize = size; }
+			inline void setColor(glm::vec4 color) { mColor = color; }
 			
-			inline const vector<Vector2>& getUV() const { return mUV; }
+			inline const std::vector<glm::vec2>& getUV() const { return mUV; }
 			inline const GLuint getTextureId() const { return mTexture == nullptr ? 0 : mTexture->getId(); }
 		private:
 			void setUVDefaults() {
-				mUV.push_back(Vector2(0, 0));
-				mUV.push_back(Vector2(0, 1));
-				mUV.push_back(Vector2(1, 1));
-				mUV.push_back(Vector2(1, 0));
+				mUV.push_back(glm::vec2(0, 0));
+				mUV.push_back(glm::vec2(0, 1));
+				mUV.push_back(glm::vec2(1, 1));
+				mUV.push_back(glm::vec2(1, 0));
 			}
 		};
 	}

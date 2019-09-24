@@ -11,7 +11,7 @@
 namespace dao {
 	namespace graphics {
 		
-		Layer::Layer(Renderer2D* renderer, ShaderProgram* shader, Matrix4 projectionMatrix)
+		Layer::Layer(Renderer2D* renderer, ShaderProgram* shader, glm::mat4 projectionMatrix)
 		: mRenderer(renderer), mShader(shader), mProjectionMatrix(projectionMatrix) {
 			mShader->enable();
 			mShader->setUniform("projection", mProjectionMatrix);

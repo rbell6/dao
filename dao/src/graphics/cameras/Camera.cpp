@@ -10,7 +10,7 @@
 //https://learnopengl.com/code_viewer_gh.php?code=includes/learnopengl/camera.h
 namespace dao {
     namespace graphics {
-        Camera::Camera(math::Vector3 position, math::Vector3 up, float yaw, float pitch) : mFront(math::Vector3(0.0f, 0.0f, -1.0f)), mMovementSpeed(SPEED), mMouseSensitivity(SENSITIVITY), mZoom(ZOOM) {
+        Camera::Camera(glm::vec3 position, glm::vec3 up, float yaw, float pitch) : mFront(glm::vec3(0.0f, 0.0f, -1.0f)), mMovementSpeed(SPEED), mMouseSensitivity(SENSITIVITY), mZoom(ZOOM) {
             mPosition = position;
             mWorldUp = up;
             mYaw = yaw;
@@ -18,22 +18,22 @@ namespace dao {
             updateCameraVectors();
         }
         
-        Camera::Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : mFront(math::Vector3(0.0f, 0.0f, -1.0f)), mMovementSpeed(SPEED), mMouseSensitivity(SENSITIVITY), mZoom(ZOOM) {
-            mPosition = math::Vector3(posX, posY, posZ);
-            mWorldUp = math::Vector3(upX, upY, upZ);
+        Camera::Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : mFront(glm::vec3(0.0f, 0.0f, -1.0f)), mMovementSpeed(SPEED), mMouseSensitivity(SENSITIVITY), mZoom(ZOOM) {
+            mPosition = glm::vec3(posX, posY, posZ);
+            mWorldUp = glm::vec3(upX, upY, upZ);
             mYaw = yaw;
             mPitch = pitch;
             updateCameraVectors();
         }
         
         void Camera::updateCameraVectors() {
-            Vector3 front;
-            front.data.x = cos(toRadians(mYaw)) * cos(toRadians(mPitch));
-            front.data.y = sin(toRadians(mPitch));
-            front.data.z = sin(toRadians(mYaw)) * cos(toRadians(mPitch));
-            mFront = front.normalized();
-            mRight = Vector3::cross(mFront, mWorldUp).normalized();
-            mUp = Vector3::cross(mRight, mFront).normalized();
+            glm::vec3 front;
+            front.x = cos(glm::radians(mYaw)) * cos(glm::radians(mPitch));
+            front.y = sin(glm::radians(mPitch));
+            front.z = sin(glm::radians(mYaw)) * cos(glm::radians(mPitch));
+			mFront = glm::normalize(front);
+			mRight = glm::normalize(glm::cross(mFront, mWorldUp));
+			mUp = glm::normalize(glm::cross(mRight, mFront));
         }
     }
 }

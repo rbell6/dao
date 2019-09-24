@@ -26,10 +26,11 @@ namespace dao {
 		}
 		
 		void BatchRenderer2D::submit(const Renderable2D* renderable) {
-			const Vector3& position = renderable->getPosition();
-			const Vector2& size = renderable->getSize();
-			const Vector4& color = renderable->getColor();
-			const vector<Vector2>& uv = renderable->getUV();
+			glm::vec3 position = renderable->getPosition();
+			glm::vec2 size = renderable->getSize();
+			glm::vec4 color = renderable->getColor();
+			
+			const vector<glm::vec2>& uv = renderable->getUV();
 			const GLuint textureId = renderable->getTextureId();
 			unsigned int uintColor{0};
 			float textureSlot = 0.0f;
@@ -54,33 +55,34 @@ namespace dao {
 					textureSlot = (float) (mTextureSlots.size());
 				}
 			} else {
-				int r = color.data.x * 255.0f;
-				int g = color.data.y * 255.0f;
-				int b = color.data.z * 255.0f;
-				int a = color.data.w * 255.0f;
+				int r = color.x * 255.0f;
+				int g = color.y * 255.0f;
+				int b = color.z * 255.0f;
+				int a = color.w * 255.0f;
 				
 				uintColor = a << 24 | b << 16 | g << 8 | r;
 			}
 			
-			mBuffer->vertex = *mTransformationBack * position;
+			//Matrix4 m(*mTransformationBack);
+			mBuffer->vertex = glm::vec3(*mTransformationBack * glm::vec4(position, 1));
 			mBuffer->uv = uv[0];
 			mBuffer->tid = textureSlot;
 			mBuffer->color = uintColor;
 			mBuffer++;
 			
-			mBuffer->vertex = *mTransformationBack * Vector3(position.data.x, position.data.y + size.data.y, position.data.z);
+			mBuffer->vertex = glm::vec3(*mTransformationBack * glm::vec4(position.x, position.y + size.y, position.z, 1));
 			mBuffer->uv = uv[1];
 			mBuffer->tid = textureSlot;
 			mBuffer->color = uintColor;
 			mBuffer++;
 			
-			mBuffer->vertex = *mTransformationBack * Vector3(position.data.x + size.data.x, position.data.y + size.data.y, position.data.z);
+			mBuffer->vertex = glm::vec3(*mTransformationBack * glm::vec4(position.x + size.x, position.y + size.y, position.z, 1));
 			mBuffer->uv = uv[2];
 			mBuffer->tid = textureSlot;
 			mBuffer->color = uintColor;
 			mBuffer++;
 			
-			mBuffer->vertex = *mTransformationBack * Vector3(position.data.x + size.data.x, position.data.y, position.data.z);
+			mBuffer->vertex = glm::vec3(*mTransformationBack * glm::vec4(position.x + size.x, position.y, position.z, 1));
 			mBuffer->uv = uv[3];
 			mBuffer->tid = textureSlot;
 			mBuffer->color = uintColor;
