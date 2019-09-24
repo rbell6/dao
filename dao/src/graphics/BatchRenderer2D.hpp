@@ -10,6 +10,7 @@
 #define BatchRenderer2D_hpp
 #include <cstddef>
 #include <vector>
+#include <glm/glm.hpp>
 #include "Renderer2D.hpp"
 #include "Renderable2D.hpp"
 #include "buffers/IndexBuffer.hpp"

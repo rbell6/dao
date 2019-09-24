@@ -14,9 +14,11 @@ namespace dao {
 			{ setUVDefaults(); }
 		}
 		
-		Renderable2D::Renderable2D(Vector3 position, Vector2 size, Vector4 color)
+		Renderable2D::Renderable2D(glm::vec3 position, glm::vec2 size, glm::vec4 color)
 		: mPosition(position), mSize(size), mColor(color) {
 			setUVDefaults(); 
 		}
+        
+        Renderable2D::Renderable2D(glm::vec3 position, glm::vec2 size, Texture* texture): mPosition(position), mSize(size), mTexture(texture) {}
 	}
 }

@@ -8,16 +8,16 @@
 
 #ifndef VertexArray_hpp
 #define VertexArray_hpp
-#include <GL/glew.h>
+#include <OpenGL/gl3.h>
+#include <OpenGL/gl3ext.h>
 #include <vector>
 #include "Buffer.hpp"
-using namespace std;
 
 namespace dao {
 	namespace graphics {
 		class VertexArray {
 			GLuint mId;
-			vector<Buffer*> mBuffers;
+			std::vector<Buffer*> mBuffers;
 		public:
 			VertexArray();
 			~VertexArray();

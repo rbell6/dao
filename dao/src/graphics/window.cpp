@@ -66,10 +66,10 @@ namespace dao {
 			glfwSetCursorPosCallback(mWindow, cursor_position_callback);
 			glfwSwapInterval(0);
 			
-			if (glewInit() != GLEW_OK) {
-				printf("could not init glew");
-				return false;
-			}
+//            if (glewInit() != GLEW_OK) {
+//                printf("could not init glew");
+//                return false;
+//            }
             return true;
         }
 		

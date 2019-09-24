@@ -9,19 +9,17 @@
 #ifndef Group_hpp
 #define Group_hpp
 #include <vector>
+#include <glm/glm.hpp>
 #include "../Renderable2D.hpp"
-#include "../../math/Math.h"
-using namespace std;
 
 namespace dao {
-	using namespace math;
 	
 	namespace graphics {
 		class Group : public Renderable2D {
-			vector<Renderable2D*> mChildren;
-			Matrix4 mTransform;
+			std::vector<Renderable2D*> mChildren;
+			glm::mat4 mTransform;
 		public:
-			Group(const Matrix4& transform);
+			Group(glm::mat4 transform);
 			~Group();
 			void add(Renderable2D* child);
 			void submit(Renderer2D* renderer) const override;

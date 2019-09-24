@@ -8,7 +8,7 @@
 
 #ifndef fileutils_h
 #define fileutils_h
-
+#include <iostream>
 #include <string>
 #include <fstream>
 using namespace std;
@@ -17,6 +17,7 @@ namespace dao {
 	class FileUtils {
 	public:
 		static string read(string filename) {
+            cout << "filename: " << filename << endl;
 			FILE* file = fopen(filename.c_str(), "rt");
 			fseek(file, 0, SEEK_END);
 			unsigned long length = ftell(file);

@@ -8,26 +8,22 @@
 
 #ifndef Layer_hpp
 #define Layer_hpp
-
 #include <vector>
-#include "../Renderer2D.hpp"
-#include "../Renderable2D.hpp"
-#include "../Shader.hpp"
-#include "../../math/Math.h"
-
-using namespace dao::math;
-using namespace std;
+#include <glm/glm.hpp>
+#include "graphics/Renderer2D.hpp"
+#include "graphics/Renderable2D.hpp"
+#include "graphics/shaders/ShaderProgram.hpp"
 
 namespace dao {
 	namespace graphics {
 		class Layer {
 		protected:
 			Renderer2D* mRenderer;
-			vector<Renderable2D*> mRenderables;
-			Shader* mShader;
-			Matrix4 mProjectionMatrix;
+			std::vector<Renderable2D*> mRenderables;
+			ShaderProgram* mShader;
+			glm::mat4 mProjectionMatrix;
 		public:
-			Layer(Renderer2D* renderer, Shader* shader, Matrix4 projectionMatrix);
+			Layer(Renderer2D* renderer, ShaderProgram* shader, glm::mat4 projectionMatrix);
 			virtual ~Layer();
 			virtual void add(Renderable2D* renderable);
 			void render();
